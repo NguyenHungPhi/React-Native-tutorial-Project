@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {LogBox} from 'react-native';
+import GlobalProvider from './src/context/Provider';
 import AppNavContainer from './src/navigations';
 
 LogBox.ignoreLogs([
@@ -7,7 +8,11 @@ LogBox.ignoreLogs([
 ]);
 
 function App() {
-  return <AppNavContainer />;
+  return (
+    <GlobalProvider>
+      <AppNavContainer />
+    </GlobalProvider>
+  );
 }
 
 export default App;
